@@ -57,7 +57,7 @@ class _SquareModePhoto extends CustomClipper<Path> {
     path.addRect(Rect.fromLTWH(0.0, 0.0, size.width, size.height));
     path.addRRect(
       RRect.fromRectAndCorners(
-        Rect.fromLTWH(32, size.height / 3.5, size.width - 64, 200),
+        Rect.fromLTWH(16, size.height / 4, size.width - 32, 250),
         topLeft: Radius.circular(16),
         topRight: Radius.circular(16),
         bottomLeft: Radius.circular(16),
