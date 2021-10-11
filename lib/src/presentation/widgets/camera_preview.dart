@@ -2,6 +2,8 @@ import 'package:camera_camera/src/presentation/controller/camera_camera_controll
 import 'package:camera_camera/src/presentation/controller/camera_camera_status.dart';
 import 'package:flutter/material.dart';
 
+import 'focus_widget.dart';
+
 class CameraCameraPreview extends StatefulWidget {
   final void Function(String value)? onFile;
   final CameraCameraController controller;
@@ -99,6 +101,7 @@ class _CameraCameraPreviewState extends State<CameraCameraPreview> {
                         ),
                       ),
                     ),
+                    CameraFocus.square(color: Colors.red)
                   ],
                 ),
               ),

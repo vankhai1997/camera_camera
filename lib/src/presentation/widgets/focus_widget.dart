@@ -4,9 +4,11 @@ class CameraFocus {
   CameraFocus._();
 
   static Widget rectangle({Color? color}) => _FocusRectangle(color: color);
+
   static Widget circle({Color? color}) => _FocusCircle(
         color: color,
       );
+
   static Widget square({Color? color}) => _FocusSquare(
         color: color,
       );
@@ -16,6 +18,7 @@ class _FocusSquare extends StatelessWidget {
   final Color? color;
 
   const _FocusSquare({Key? key, this.color}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return IgnorePointer(
@@ -36,14 +39,21 @@ class _SquareModePhoto extends CustomClipper<Path> {
   Path getClip(Size size) {
     var path = Path();
     var reactPath = Path();
-
-    reactPath.moveTo(size.width / 4, size.height * 2 / 6);
-    reactPath.lineTo(size.width * 3 / 4, size.height * 2 / 6);
-    reactPath.lineTo(size.width * 3 / 4, size.height * 4 / 6);
-    reactPath.lineTo(size.width / 4, size.height * 4 / 6);
-
-    path.addPath(reactPath, Offset(0, 0));
+    // reactPath.moveTo(32, size.height * 2 / 6);
+    // reactPath.lineTo(size.width - 32, size.height * 2 / 6);
+    // reactPath.lineTo(size.width - 32, size.height * 4 / 6);
+    // reactPath.lineTo(32, size.height * 4 / 6);
+    // path.addPath(reactPath, Offset(0, 0));
     path.addRect(Rect.fromLTWH(0.0, 0.0, size.width, size.height));
+    path.addRRect(
+      RRect.fromRectAndCorners(
+        Rect.fromLTWH(32, size.height * 2 / 6, size.width - 64, 200),
+        topLeft: Radius.circular(16),
+        topRight: Radius.circular(16),
+        bottomLeft: Radius.circular(16),
+        bottomRight: Radius.circular(16),
+      ),
+    );
     path.fillType = PathFillType.evenOdd;
 /*
     path.moveTo(size.width/4, size.height/4);
@@ -65,6 +75,7 @@ class _FocusRectangle extends StatelessWidget {
   final Color? color;
 
   const _FocusRectangle({Key? key, this.color}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return IgnorePointer(
@@ -85,7 +96,6 @@ class _RectangleModePhoto extends CustomClipper<Path> {
   Path getClip(Size size) {
     var path = Path();
     var reactPath = Path();
-
     reactPath.moveTo(size.width / 4, size.height / 4);
     reactPath.lineTo(size.width / 4, size.height * 3 / 4);
     reactPath.lineTo(size.width * 3 / 4, size.height * 3 / 4);
@@ -114,6 +124,7 @@ class _FocusCircle extends StatelessWidget {
   final Color? color;
 
   const _FocusCircle({Key? key, this.color}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return IgnorePointer(
