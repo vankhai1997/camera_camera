@@ -9,23 +9,33 @@ class CameraFocus {
         color: color,
       );
 
-  static Widget square({Color? color}) => _FocusSquare(
+  static Widget square({
+    Color? color,
+    double? width,
+    double? height,
+  }) =>
+      _FocusSquare(
         color: color,
+        width: width,
+        height: height,
       );
 }
 
 class _FocusSquare extends StatelessWidget {
   final Color? color;
+  final double? width;
+  final double? height;
 
-  const _FocusSquare({Key? key, this.color}) : super(key: key);
+  const _FocusSquare({Key? key, this.color, this.width, this.height})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return IgnorePointer(
       child: ClipPath(
         child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
+          width: width ?? MediaQuery.of(context).size.width,
+          height: height ?? MediaQuery.of(context).size.height,
           color: color,
         ),
         clipper: _SquareModePhoto(),
@@ -54,6 +64,7 @@ class _SquareModePhoto extends CustomClipper<Path> {
         bottomRight: Radius.circular(16),
       ),
     );
+
     path.fillType = PathFillType.evenOdd;
 /*
     path.moveTo(size.width/4, size.height/4);
