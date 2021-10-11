@@ -25,18 +25,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b72a0dfd-7a6d-49e4-8d31-108be19eb265" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/core/camera_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/core/camera_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/widgets/camera_preview.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/widgets/camera_preview.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/widgets/focus_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/widgets/focus_widget.dart" afterDir="false" />
-    </list>
+    <list default="true" id="b72a0dfd-7a6d-49e4-8d31-108be19eb265" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,25 +90,25 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="740" y="271" key="FileChooserDialogImpl/0.0.1920.1032/-1920.2.1920.1080@0.0.1920.1032" timestamp="1633943925833" />
-    <state width="1858" height="94" key="GridCell.Tab.0.bottom" timestamp="1633947717862">
-      <screen x="-1920" y="2" width="1920" height="1080" />
+    <state width="1858" height="378" key="GridCell.Tab.0.bottom" timestamp="1633947957035">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1858" height="94" key="GridCell.Tab.0.bottom/0.0.1920.1032/-1920.2.1920.1080@-1920.2.1920.1080" timestamp="1633947717862" />
-    <state width="1877" height="96" key="GridCell.Tab.0.bottom/0.0.1920.1032/-1920.2.1920.1080@0.0.1920.1032" timestamp="1633943868834" />
-    <state width="1858" height="94" key="GridCell.Tab.0.center" timestamp="1633947717862">
-      <screen x="-1920" y="2" width="1920" height="1080" />
+    <state width="1858" height="378" key="GridCell.Tab.0.bottom/0.0.1920.1032/-1920.2.1920.1080@0.0.1920.1032" timestamp="1633947957035" />
+    <state width="1858" height="378" key="GridCell.Tab.0.center" timestamp="1633947957035">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1858" height="94" key="GridCell.Tab.0.center/0.0.1920.1032/-1920.2.1920.1080@-1920.2.1920.1080" timestamp="1633947717862" />
-    <state width="1877" height="96" key="GridCell.Tab.0.center/0.0.1920.1032/-1920.2.1920.1080@0.0.1920.1032" timestamp="1633943868834" />
-    <state width="1858" height="94" key="GridCell.Tab.0.left" timestamp="1633947717862">
-      <screen x="-1920" y="2" width="1920" height="1080" />
+    <state width="1858" height="378" key="GridCell.Tab.0.center/0.0.1920.1032/-1920.2.1920.1080@0.0.1920.1032" timestamp="1633947957035" />
+    <state width="1858" height="378" key="GridCell.Tab.0.left" timestamp="1633947957035">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1858" height="94" key="GridCell.Tab.0.left/0.0.1920.1032/-1920.2.1920.1080@-1920.2.1920.1080" timestamp="1633947717862" />
-    <state width="1877" height="96" key="GridCell.Tab.0.left/0.0.1920.1032/-1920.2.1920.1080@0.0.1920.1032" timestamp="1633943868834" />
-    <state width="1858" height="94" key="GridCell.Tab.0.right" timestamp="1633947717862">
-      <screen x="-1920" y="2" width="1920" height="1080" />
+    <state width="1858" height="378" key="GridCell.Tab.0.left/0.0.1920.1032/-1920.2.1920.1080@0.0.1920.1032" timestamp="1633947957035" />
+    <state width="1858" height="378" key="GridCell.Tab.0.right" timestamp="1633947957035">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1858" height="94" key="GridCell.Tab.0.right/0.0.1920.1032/-1920.2.1920.1080@-1920.2.1920.1080" timestamp="1633947717862" />
-    <state width="1877" height="96" key="GridCell.Tab.0.right/0.0.1920.1032/-1920.2.1920.1080@0.0.1920.1032" timestamp="1633943868834" />
+    <state width="1858" height="378" key="GridCell.Tab.0.right/0.0.1920.1032/-1920.2.1920.1080@0.0.1920.1032" timestamp="1633947957035" />
   </component>
 </project>
