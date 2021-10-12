@@ -78,7 +78,7 @@ class _SquareModePhoto extends CustomPainter {
     path.addRect(Rect.fromLTWH(0.0, 0.0, size.width, size.height));
     path.addRRect(
       RRect.fromRectAndCorners(
-        Rect.fromLTWH(16, size.height / 4.5, size.width - 32, 240),
+        Rect.fromLTWH(16, size.height / 4.5, size.width - 32, hPaint),
         topLeft: Radius.circular(16),
         topRight: Radius.circular(16),
         bottomLeft: Radius.circular(16),
