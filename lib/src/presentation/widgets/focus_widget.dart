@@ -107,7 +107,7 @@ class _SquareModePhoto extends CustomPainter {
     Paint paint2 = new Paint()
       ..color = Colors.white
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 4;
+      ..strokeWidth = 3;
 
     canvas.drawPath(path2, paint2);
 
