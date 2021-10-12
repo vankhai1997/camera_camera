@@ -105,11 +105,10 @@ class _CameraCameraPreviewState extends State<CameraCameraPreview> {
                     CameraFocus.square(
                         color: Colors.red,
                         title: 'Mặt trước',
-                        marginDes: 0,
                         hPaint: 245,
                         width: MediaQuery.of(context).size.width,
-                        marginTitle: 0,
-                        height: MediaQuery.of(context).size.height, desc: 'Căn giấy tờ vào giữa khung này nhé')
+                        height: MediaQuery.of(context).size.height,
+                        desc: 'Căn giấy tờ vào giữa khung này nhé')
                   ],
                 ),
               ),

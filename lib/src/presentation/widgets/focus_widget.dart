@@ -8,8 +8,6 @@ class CameraFocus {
           required double width,
           required double height,
           required double hPaint,
-          required double marginTitle,
-          required double marginDes,
           required final String title,
           required final String desc}) =>
       _FocusSquare(
@@ -17,8 +15,6 @@ class CameraFocus {
         width: width,
         height: height,
         hPaint: hPaint,
-        marginTitle: marginTitle,
-        marginDes: marginDes,
         desc: desc,
         title: title,
       );
@@ -29,8 +25,6 @@ class _FocusSquare extends StatelessWidget {
   final double width;
   final double height;
   final double hPaint;
-  final double marginTitle;
-  final double marginDes;
   final String title;
   final String desc;
 
@@ -41,9 +35,7 @@ class _FocusSquare extends StatelessWidget {
       required this.height,
       required this.hPaint,
       required this.desc,
-      required this.title,
-      required this.marginTitle,
-      required this.marginDes})
+      required this.title})
       : super(key: key);
 
   @override
@@ -56,8 +48,6 @@ class _FocusSquare extends StatelessWidget {
             width: width,
             height: height,
             hPaint: hPaint,
-            marginTitle: marginTitle,
-            marginDes: marginDes,
             des: desc,
             title: title),
       ),
@@ -70,8 +60,6 @@ class _SquareModePhoto extends CustomPainter {
   final double width;
   final double height;
   final double hPaint;
-  final double marginTitle;
-  final double marginDes;
   final String title;
   final String des;
 
@@ -81,9 +69,7 @@ class _SquareModePhoto extends CustomPainter {
       required this.height,
       required this.title,
       required this.des,
-      required this.hPaint,
-      required this.marginTitle,
-      required this.marginDes});
+      required this.hPaint});
 
   @override
   void paint(Canvas canvas, Size size) {
