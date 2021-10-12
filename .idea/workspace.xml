@@ -25,7 +25,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b72a0dfd-7a6d-49e4-8d31-108be19eb265" name="Default Changelist" comment="" />
+    <list default="true" id="b72a0dfd-7a6d-49e4-8d31-108be19eb265" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/presentation/widgets/camera_preview.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/widgets/camera_preview.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/presentation/widgets/focus_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/widgets/focus_widget.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,5 +133,9 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="708" y="248" width="585" height="534" key="find.popup/0.0.1920.1032/-1920.2.1920.1080@0.0.1920.1032" timestamp="1633948476107" />
+    <state x="657" y="172" width="672" height="676" key="search.everywhere.popup" timestamp="1634007286302">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="657" y="172" width="672" height="676" key="search.everywhere.popup/0.0.1920.1032/-1920.2.1920.1080@0.0.1920.1032" timestamp="1634007286302" />
   </component>
 </project>

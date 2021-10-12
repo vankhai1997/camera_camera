@@ -3,57 +3,92 @@ import 'package:flutter/material.dart';
 class CameraFocus {
   CameraFocus._();
 
-  static Widget rectangle({Color? color}) => _FocusRectangle(color: color);
-
-  static Widget circle({Color? color}) => _FocusCircle(
-        color: color,
-      );
-
-  static Widget square({
-    Color? color,
-    double? width,
-    double? height,
-  }) =>
+  static Widget square(
+          {required Color color,
+          required double width,
+          required double height,
+          required double hPaint,
+          required double marginTitle,
+          required double marginDes,
+          required final String title,
+          required final String desc}) =>
       _FocusSquare(
         color: color,
         width: width,
         height: height,
+        hPaint: hPaint,
+        marginTitle: marginTitle,
+        marginDes: marginDes,
+        desc: desc,
+        title: title,
       );
 }
 
 class _FocusSquare extends StatelessWidget {
-  final Color? color;
-  final double? width;
-  final double? height;
+  final Color color;
+  final double width;
+  final double height;
+  final double hPaint;
+  final double marginTitle;
+  final double marginDes;
+  final String title;
+  final String desc;
 
-  const _FocusSquare({Key? key, this.color, this.width, this.height})
+  const _FocusSquare(
+      {Key? key,
+      required this.color,
+      required this.width,
+      required this.height,
+      required this.hPaint,
+      required this.desc,
+      required this.title,
+      required this.marginTitle,
+      required this.marginDes})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return IgnorePointer(
-      child: ClipPath(
-        child: Container(
-          width: width ?? MediaQuery.of(context).size.width,
-          height: height ?? MediaQuery.of(context).size.height,
-          color: color,
-        ),
-        clipper: _SquareModePhoto(),
+      child: CustomPaint(
+        child: Container(width: width, height: height),
+        painter: _SquareModePhoto(
+            color: color,
+            width: width,
+            height: height,
+            hPaint: hPaint,
+            marginTitle: marginTitle,
+            marginDes: marginDes,
+            des: desc,
+            title: title),
       ),
     );
   }
 }
 
-class _SquareModePhoto extends CustomClipper<Path> {
+class _SquareModePhoto extends CustomPainter {
+  final Color color;
+  final double width;
+  final double height;
+  final double hPaint;
+  final double marginTitle;
+  final double marginDes;
+  final String title;
+  final String des;
+
+  _SquareModePhoto(
+      {required this.color,
+      required this.width,
+      required this.height,
+      required this.title,
+      required this.des,
+      required this.hPaint,
+      required this.marginTitle,
+      required this.marginDes});
+
   @override
-  Path getClip(Size size) {
+  void paint(Canvas canvas, Size size) {
+    //draw focus
     var path = Path();
-    var reactPath = Path();
-    // reactPath.moveTo(32, size.height * 2 / 6);
-    // reactPath.lineTo(size.width - 32, size.height * 2 / 6);
-    // reactPath.lineTo(size.width - 32, size.height * 4 / 6);
-    // reactPath.lineTo(32, size.height * 4 / 6);
-    // path.addPath(reactPath, Offset(0, 0));
     path.addRect(Rect.fromLTWH(0.0, 0.0, size.width, size.height));
     path.addRRect(
       RRect.fromRectAndCorners(
@@ -66,104 +101,59 @@ class _SquareModePhoto extends CustomClipper<Path> {
     );
 
     path.fillType = PathFillType.evenOdd;
-/*
-    path.moveTo(size.width/4, size.height/4);
-    path.lineTo(size.width/4, size.height*3/4);
-    path.lineTo(size.width*3/4, size.height*3/4);
-    path.lineTo(size.width*3/4, size.height/4);
-*/
     path.close();
-    return path;
-  }
+    final paint = Paint()
+      ..color = (color)
+      ..strokeWidth = 4;
+    canvas.drawPath(path, paint);
 
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return true;
-  }
-}
-
-class _FocusRectangle extends StatelessWidget {
-  final Color? color;
-
-  const _FocusRectangle({Key? key, this.color}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return IgnorePointer(
-      child: ClipPath(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          color: color,
-        ),
-        clipper: _RectangleModePhoto(),
+    //draw border
+    var path2 = Path();
+    path2.addRRect(
+      RRect.fromRectAndCorners(
+        Rect.fromLTWH(16, size.height / 4.5, size.width - 32, hPaint),
+        topLeft: Radius.circular(16),
+        topRight: Radius.circular(16),
+        bottomLeft: Radius.circular(16),
+        bottomRight: Radius.circular(16),
       ),
     );
-  }
-}
+    Paint paint2 = new Paint()
+      ..color = Colors.white
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 4;
 
-class _RectangleModePhoto extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    var path = Path();
-    var reactPath = Path();
-    reactPath.moveTo(size.width / 4, size.height / 4);
-    reactPath.lineTo(size.width / 4, size.height * 3 / 4);
-    reactPath.lineTo(size.width * 3 / 4, size.height * 3 / 4);
-    reactPath.lineTo(size.width * 3 / 4, size.height / 4);
+    canvas.drawPath(path2, paint2);
 
-    path.addPath(reactPath, Offset(0, 0));
-    path.addRect(Rect.fromLTWH(0.0, 0.0, size.width, size.height));
-    path.fillType = PathFillType.evenOdd;
-/*
-    path.moveTo(size.width/4, size.height/4);
-    path.lineTo(size.width/4, size.height*3/4);
-    path.lineTo(size.width*3/4, size.height*3/4);
-    path.lineTo(size.width*3/4, size.height/4);
-*/
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return true;
-  }
-}
-
-class _FocusCircle extends StatelessWidget {
-  final Color? color;
-
-  const _FocusCircle({Key? key, this.color}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return IgnorePointer(
-      child: ClipPath(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          color: color,
-        ),
-        clipper: _CircleModePhoto(),
-      ),
+    //draw des
+    final TextPainter desPainter =
+        TextPainter(textDirection: TextDirection.ltr);
+    desPainter.text = TextSpan(
+      text: des,
+      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
     );
-  }
-}
+    desPainter.textAlign = TextAlign.center;
+    desPainter.layout();
+    desPainter.paint(
+        canvas,
+        Offset(
+            width / 2 - desPainter.width / 2, size.height / 4.5 + hPaint + 20));
+    //draw des
+    final TextPainter titlePainter =
+        TextPainter(textDirection: TextDirection.ltr);
+    titlePainter.text = TextSpan(
+      text: title,
+      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+    );
+    titlePainter.textAlign = TextAlign.center;
+    titlePainter.layout();
 
-class _CircleModePhoto extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    return new Path()
-      ..addOval(new Rect.fromCircle(
-          center: new Offset(size.width / 2, size.height / 2),
-          radius: size.width * 0.4))
-      ..addRect(new Rect.fromLTWH(0.0, 0.0, size.width, size.height))
-      ..fillType = PathFillType.evenOdd;
+    titlePainter.paint(canvas,
+        Offset(width / 2 - titlePainter.width / 2, size.height / 4.5 - 50));
   }
 
   @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return true;
   }
 }
